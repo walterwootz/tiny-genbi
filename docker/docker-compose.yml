@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  genbi:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: tiny-genbi
+    ports:
+      - "5556:5556"
+    environment:
+      # LLM Provider Settings
+      - LLM_PROVIDER=${LLM_PROVIDER:-openai}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4}
+      - LLM_API_KEY=${LLM_API_KEY}
+      - LLM_BASE_URL=${LLM_BASE_URL}
+      - LLM_TEMPERATURE=${LLM_TEMPERATURE:-0.1}
+      - LLM_MAX_TOKENS=${LLM_MAX_TOKENS:-2000}
+      
+      # Embedding Settings
+      - EMBEDDING_PROVIDER=${EMBEDDING_PROVIDER:-openai}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-text-embedding-3-small}
+      - EMBEDDING_API_KEY=${EMBEDDING_API_KEY}
+      - EMBEDDING_BASE_URL=${EMBEDDING_BASE_URL}
+      
+      # API Settings
+      - API_HOST=0.0.0.0
+      - API_PORT=5556
+      
+      # System Settings
+      - DEBUG=${DEBUG:-false}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      # Persist data between container restarts
+      - genbi-data:/app/data
+      # Persist credentials
+      - genbi-credentials:/app/.credentials
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:5556/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: MySQL Database for testing
+  # Uncomment if you want a MySQL instance for development/testing
+  # mysql:
+  #   image: mysql:8.0
+  #   container_name: genbi-mysql
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=rootpassword
+  #     - MYSQL_DATABASE=testdb
+  #     - MYSQL_USER=testuser
+  #     - MYSQL_PASSWORD=testpassword
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - mysql-data:/var/lib/mysql
+  #   restart: unless-stopped
+
+  # Optional: Ollama for local LLM support
+  # Uncomment if you want to use local LLMs
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   container_name: genbi-ollama
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ollama-data:/root/.ollama
+  #   restart: unless-stopped
+  #   # After starting, pull a model:
+  #   # docker exec -it genbi-ollama ollama pull llama2
+
+volumes:
+  genbi-data:
+    driver: local
+  genbi-credentials:
+    driver: local
+  # mysql-data:
+  #   driver: local
+  # ollama-data:
+  #   driver: local
