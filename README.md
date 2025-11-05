@@ -267,21 +267,6 @@ Once the backend is running, visit:
 - **Swagger UI**: `http://localhost:5556/docs`
 - **ReDoc**: `http://localhost:5556/redoc`
 
-## Example Scripts
-
-The repository includes example scripts for testing:
-
-- `example.py` - Basic query generation example
-- `example_ask.py` - Ask questions example
-- `example_mysql.py` - MySQL connection and indexing example
-- `example_ollama.py` - Local LLM (Ollama) example
-
-Run an example:
-
-```bash
-python example_ask.py
-```
-
 ## Using Local LLMs (Ollama)
 
 To use a local LLM instead of commercial APIs:
