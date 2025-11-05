@@ -2,7 +2,7 @@
   <img src="assets/logo.png" alt="Local MySQL GenBI Logo" width="auto"/>
 </div>
 
-<h1 align="center"> Tiny GenBI (MySQL)</h1>
+<h1 align="center"> Tiny GenBI - Open-Source GenBI Lightweight Agent</h1>
 
 > ✨​ Lightweight (but powerful 💪​) system that leverages LLMs and Agents to generate SQL queries from natural language questions and answer in natural language. The system performs RAG by indexing db schemas, SQL-pairs and user Instructions using vector similarity search to provide context-aware query generation.
 
