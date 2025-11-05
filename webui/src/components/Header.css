@@ -1,7 +1,6 @@
 .header {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   color: white;
-  padding: 1rem 2rem;
   box-shadow: var(--shadow-md);
 }
 
@@ -10,7 +9,6 @@
   justify-content: space-between;
   align-items: center;
   max-width: 1400px;
-  margin: 0 auto;
 }
 
 .logo {
@@ -19,8 +17,10 @@
   gap: 0.75rem;
 }
 
-.logo-icon {
-  font-size: 2rem;
+.logo-image {
+  height: 4rem;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo h1 {

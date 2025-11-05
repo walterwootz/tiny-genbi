@@ -35,7 +35,9 @@ class MySQLQueryExecutor:
                 password=credentials.password,
                 database=credentials.database,
                 charset='utf8mb4',
-                use_unicode=True
+                use_unicode=True,
+                autocommit=True,  # Enable autocommit for read queries
+                buffered=True     # Use buffered connection to avoid unread results
             )
             
             if connection.is_connected():
@@ -92,13 +94,24 @@ class MySQLQueryExecutor:
             
             # Connect to database
             connection = self._connect(credentials)
-            cursor = connection.cursor(dictionary=True)
+            cursor = connection.cursor(dictionary=True, buffered=True)  # Use buffered cursor
             
             # Execute query
             cursor.execute(sql)
             
             # Fetch results
             rows = cursor.fetchmany(max_rows)
+            
+            # Consume any remaining results to prevent "Unread result found" error
+            # This is important when fetchmany doesn't fetch all results
+            try:
+                while cursor.nextset():
+                    pass  # Move to next result set if any
+                # Also consume any remaining rows in current set
+                while cursor.fetchone():
+                    pass  # Consume remaining rows
+            except Exception:
+                pass  # No more rows or result sets
             
             # Get column names
             columns = [desc[0] for desc in cursor.description] if cursor.description else []

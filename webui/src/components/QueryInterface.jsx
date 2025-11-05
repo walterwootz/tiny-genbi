@@ -235,7 +235,7 @@ function QueryInterface({ apiConfig }) {
             <option value="">-- Select a database --</option>
             {databases.map((db) => (
               <option key={db.database_id} value={db.database_id}>
-                {db.database_id} ({db.host}:{db.port}/{db.database_name})
+                {db.database_id} ({db.database_name})
               </option>
             ))}
           </select>

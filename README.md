@@ -2,9 +2,9 @@
   <img src="assets/logo.png" alt="Local MySQL GenBI Logo" width="auto"/>
 </div>
 
-# Tiny GenBI (MySQL)
+<h1 align="center"> Tiny GenBI (MySQL)</h1>
 
-A Text-to-SQL system that leverages Language Models and Agents to generate SQL queries from natural language questions. The system indexes MySQL database schemas and uses vector similarity search to provide context-aware query generation.
+> ✨​ Lightweight (but powerful 💪​) system that leverages LLMs and Agents to generate SQL queries from natural language questions and answer in natural language. The system performs RAG by indexing db schemas, SQL-pairs and user Instructions using vector similarity search to provide context-aware query generation.
 
 ## ⚠️ Important Notice - Proof of Concept
 
@@ -46,6 +46,20 @@ This is a functional demonstration of Text-to-SQL capabilities with the followin
 - 🌐 **Modern Web UI**: React-based interface for easy interaction
 - 🐳 **Docker Support**: Easy deployment with Docker and Docker Compose
 
+## Web Interface
+
+The application provides an intuitive web interface for interacting with your MySQL databases:
+
+<div align="center">
+  <img src="assets/screenshots/webui-demo.gif" alt="Tiny GenBI Web Interface Demo" width="800"/>
+</div>
+
+The web UI includes:
+- **Ask Questions**: Natural language query interface with database selection
+- **Database Management**: View and manage your connected MySQL databases
+- **Knowledge Base**: Manage SQL pairs, domain instructions, and examples
+- **Settings**: Configure API endpoints and system preferences
+
 ## Architecture
 
 - **Backend**: FastAPI (Python) for API endpoints and query processing
@@ -74,6 +88,27 @@ This application uses **Retrieval-Augmented Generation (RAG)** to improve SQL qu
 
 This RAG approach significantly improves query accuracy by providing the LLM with relevant context from your specific database schema and historical queries.
 
+### Schema Auto-Indexing Interface
+
+The application provides a user-friendly interface for selecting and indexing database tables:
+
+<div align="center">
+  <img src="assets/screenshots/schema-indexing-selection.png" alt="Schema Table Selection" width="800"/>
+  <p><em>Select which tables to index for AI querying</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/screenshots/schema-viewer.png" alt="Database Schema Viewer" width="800"/>
+  <p><em>Detailed schema information with tables, columns, and relationships</em></p>
+</div>
+
+The schema indexing process includes:
+- **Table Selection**: Choose specific tables to index or select all tables
+- **Schema Discovery**: Automatically analyze table structures, columns, and data types
+- **Relationship Detection**: Identify foreign key relationships between tables
+- **Vector Storage**: Convert schema information into embeddings for efficient retrieval
+- **Interactive Visualization**: Browse indexed schemas with expandable table details
+
 ## Prerequisites
 
 - Python 3.9+
@@ -86,8 +121,8 @@ This RAG approach significantly improves query accuracy by providing the LLM wit
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/local-mysql-genbi.git
-cd local-mysql-genbi
+git clone https://github.com/walterwootz/tiny-genbi.git
+cd tiny-genbi
 ```
 
 ### 2. Backend Setup
@@ -194,7 +229,7 @@ docker-compose up -d
 ## Project Structure
 
 ```
-local-mysql-genbi/
+tiny-genbi/
 ├── src/                      # Backend source code
 │   ├── main.py              # FastAPI application entry point
 │   ├── api.py               # API endpoints
