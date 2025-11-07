@@ -6,6 +6,25 @@
 
 > ✨​ Lightweight (but powerful 💪​) system that leverages LLMs and Agents to generate SQL queries from natural language questions and answer in natural language. The system performs RAG by indexing db schemas, SQL-pairs and user Instructions using vector similarity search to provide context-aware query generation.
 
+## 📋 Summary
+
+- [⚠️ Important Notice - Proof of Concept](#️-important-notice---proof-of-concept)
+- [Features](#features)
+- [Web Interface](#web-interface)
+- [Architecture](#architecture)
+- [Prerequisites](#prerequisites)
+- [Quick Start (Local Development)](#quick-start-local-development)
+- [Docker Deployment](#docker-deployment)
+- [Project Structure](#project-structure)
+- [API Documentation](#api-documentation)
+- [Using Local LLMs (Ollama)](#using-local-llms-ollama)
+- [Troubleshooting](#troubleshooting)
+- [Security Notes](#security-notes)
+- [Future Improvements](#future-improvements)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
+
 ## ⚠️ Important Notice - Proof of Concept
 
 **This project is a Proof of Concept (PoC) and is NOT production-ready.**
