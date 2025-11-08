@@ -4,6 +4,24 @@
 
 <h1 align="center"> Tiny GenBI - Open-Source GenBI Lightweight Agent</h1>
 
+<div align="center">
+  
+  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+  ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+  ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+  ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
+  ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+  
+  ![OpenAI](https://img.shields.io/badge/OpenAI-412991.svg?style=for-the-badge&logo=openai&logoColor=white)
+  ![Anthropic](https://img.shields.io/badge/Anthropic-191919.svg?style=for-the-badge&logo=anthropic&logoColor=white)
+  ![Ollama](https://img.shields.io/badge/Ollama-000000.svg?style=for-the-badge&logo=ollama&logoColor=white)
+  
+  ![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
+  ![Version](https://img.shields.io/badge/Version-PoC-orange.svg?style=for-the-badge)
+  
+</div>
+
 > ✨​ Lightweight (but powerful 💪​) system that leverages LLMs and Agents to generate SQL queries from natural language questions and answer in natural language. The system performs RAG by indexing db schemas, SQL-pairs and user Instructions using vector similarity search to provide context-aware query generation.
 
 ## 📋 Summary
