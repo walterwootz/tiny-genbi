@@ -25,6 +25,14 @@
 
 > ✨​ Lightweight (but powerful 💪​) system that leverages LLMs and Agents to generate SQL queries from natural language questions and answer in natural language. The system performs RAG by indexing db schemas, SQL-pairs and user Instructions using vector similarity search to provide context-aware query generation.
 
+<div align="center">
+
+[![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=9CSNUCM9FX53S)
+
+**💙 Support this project! If you find it useful, consider buying me a coffee ☕**
+
+</div>
+
 ## 📋 Summary
 
 - [⚠️ Important Notice - Proof of Concept](#️-important-notice---proof-of-concept)
